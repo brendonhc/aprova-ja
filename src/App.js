@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+import Menu from './components/Menu';
+
 import Entrar from './pages/Entrar';
 import Cadastro from './pages/Cadastro';
 import Classe from './pages/Classe';
 import Inicio from './pages/Inicio';
 
-
 class App extends Component {
   render() {
     return (
       <div>
-        <header>
-          <h5>Aqui vai o Header</h5>
-        </header>
+        <Menu />
 
         <BrowserRouter>
           <Switch>
