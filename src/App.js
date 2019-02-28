@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Menu from './components/Menu';
+import Footer from './components/Footer';
 
 import Entrar from './pages/Entrar';
 import Cadastro from './pages/Cadastro';
@@ -23,9 +24,7 @@ class App extends Component {
           </Switch>
         </BrowserRouter>
 
-        <footer>
-          <h5>Aqui Vai o Footer</h5>
-        </footer>
+        <Footer />
       </div>
     );
   }
