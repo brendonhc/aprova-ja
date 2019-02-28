@@ -17,7 +17,7 @@ class Menu extends Component {
             <Nav.Link href="#ajuda" >Ajuda </Nav.Link>
             <Nav.Link href="#saibamais">Saiba Mais </Nav.Link>
           </Nav>
-          <Button variant="outline-light" >Login</Button>
+          <Button variant="outline-light" href="/entrar" >Login</Button>
         </Navbar.Collapse>
 
       </Navbar>
