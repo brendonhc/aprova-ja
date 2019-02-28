@@ -6,7 +6,7 @@ import logo from '../../img/AprovaJáWhite.png'
 class Menu extends Component {
   render() {
     return (
-      <Navbar bg="primary" expand="lg" inline variant="dark">
+      <Navbar className="container-fluid" bg="primary" expand="lg" inline variant="dark">
         <Navbar.Brand href="/" >
           <img width="150px" src={logo} alt="logo" />
         </Navbar.Brand>

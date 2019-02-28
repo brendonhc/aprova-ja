@@ -5,7 +5,6 @@ import { faTwitter, faFacebook, faLinkedin, faInstagram } from '@fortawesome/fre
 export default class Footer extends Component {
   render() {
     return (
-      <footer className="footer row">
         <div className="container-fluid bg-dark">
           <div className="row">
             <div className="py-3 mx-auto px-4">
@@ -30,7 +29,6 @@ export default class Footer extends Component {
             <p className="text-light text-center">Copyright © 2019 Aprova Já todos direitos reservados</p>
           </div>
         </div>
-      </footer>
     )
   }
 }

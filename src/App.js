@@ -12,19 +12,23 @@ import Inicio from './pages/Inicio';
 class App extends Component {
   render() {
     return (
-      <div>
-        <Menu />
-
-        <BrowserRouter>
-          <Switch>
-            <Route path="/" exact component={Inicio} />
-            <Route path="/entrar" component={Entrar} />
-            <Route path="/cadastro" component={Cadastro} />
-            <Route path="/classe" component={Classe} />
-          </Switch>
-        </BrowserRouter>
-
-        <Footer />
+      <div className="container-fluid" >
+        <header className="row">
+          <Menu />
+        </header>
+        <main className="row justify-content-center align-items-center" style={{ minHeight: (window.innerHeight-200)} }>
+          <BrowserRouter>
+            <Switch>
+              <Route path="/" exact component={Inicio} />
+              <Route path="/entrar" component={Entrar} />
+              <Route path="/cadastro" component={Cadastro} />
+              <Route path="/classe" component={Classe} />
+            </Switch>
+          </BrowserRouter>
+        </main>
+        <footer className="row">
+          <Footer />
+        </footer>
       </div>
     );
   }
