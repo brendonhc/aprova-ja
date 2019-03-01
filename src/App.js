@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 
 import Entrar from './pages/Entrar';
 import Cadastro from './pages/Cadastro';
-import Classe from './pages/Classe';
+import Sala from './pages/Sala';
 import Inicio from './pages/Inicio';
 import CadastroInstrutor from './pages/CadastroInstrutor';
 
@@ -23,8 +23,8 @@ class App extends Component {
               <Route path="/" exact component={Inicio} />
               <Route path="/entrar" component={Entrar} />
               <Route path="/cadastro-aluno" component={Cadastro} />
-              <Route path="/classe" component={Classe} />
               <Route path="/cadastro-instrutor" component={CadastroInstrutor} />
+              <Route path="/sala" component={Sala} />
             </Switch>
           </BrowserRouter>
         </main>
