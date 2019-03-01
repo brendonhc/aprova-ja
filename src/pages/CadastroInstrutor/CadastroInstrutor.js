@@ -5,7 +5,7 @@ import { Row, Form, Button, Card } from 'react-bootstrap'
 import Menu from '../../components/Menu'
 import Footer from '../../components/Footer'
 
-import { storagedTokenIsValid } from '../../services/token'
+import { storagedTokenIsValid, setStoragedToken } from '../../services/token'
 
 import api from '../../services/api';
 
@@ -25,8 +25,8 @@ class CadastroInstrutor extends Component {
     const isValid = await storagedTokenIsValid()
     // Se já estiver logado, encaminha para a sala
     if (isValid) {
-      console.log('Loga aí, né mano!')
-      this.props.history.push("/sala")
+      await console.log('Boa, já logou!')
+      await this.props.history.push("/sala")
     }
   }
 
@@ -93,8 +93,8 @@ class CadastroInstrutor extends Component {
     const response = await api.post('instrutores', sendJson);
 
     // Salva o token da sessão no cache do navegador
-    await localStorage.setItem('@AprovaJa:token', response.data.data.user.stsTokenManager.accessToken)
-    this.props.history.push('/sala');
+    await setStoragedToken(response.data.data.user.stsTokenManager.accessToken)
+    await this.props.history.push('/sala');
   }
 
   render() {
@@ -112,20 +112,20 @@ class CadastroInstrutor extends Component {
                 <div className="col-6">
                   <Form.Group controlId="formBasicName">
                     <Form.Label><b>Nome</b></Form.Label>
-                    <Form.Control size="sm" placeholder="Digite seu nome" onChange={this.handleNameChange}/>
+                    <Form.Control type="text" required size="sm" placeholder="Digite seu nome" onChange={this.handleNameChange}/>
                   </Form.Group>
                   <Form.Group controlId="formBasicEmail" className="mt-3">
                     <Form.Label><b>Email</b></Form.Label>
-                    <Form.Control size="sm" type="email" placeholder="Digite seu email" onChange={this.handleEmailChange} />
+                    <Form.Control required size="sm" type="email" placeholder="Digite seu email" onChange={this.handleEmailChange} />
                   </Form.Group>
 
                   <Form.Group controlId="formBasicPassword">
                     <Form.Label><b>Senha</b></Form.Label>
-                    <Form.Control size="sm" type="password" placeholder="Digite sua senha" onChange={this.handlePasswordChange} />
+                    <Form.Control required size="sm" type="password" placeholder="Digite sua senha" onChange={this.handlePasswordChange} />
                   </Form.Group >
                   <Form.Group controlId="formBasicCpf">
                     <Form.Label><b>CPF</b></Form.Label>
-                    <Form.Control size="sm" placeholder="Digite seu CPF" onChange={this.handleCPFChange} />
+                    <Form.Control required size="sm" type="number" placeholder="Digite seu CPF" onChange={this.handleCPFChange} />
                   </Form.Group >
                   <Form.Group>
                     <Form.Label><b>Categorias</b></Form.Label><br/>
@@ -140,16 +140,16 @@ class CadastroInstrutor extends Component {
                 <div className="col-6">
                   <Form.Group controlId="formBasicTelefone">
                     <Form.Label><b>Telefone</b></Form.Label>
-                    <Form.Control size="sm" placeholder="Digite seu telefone" onChange={this.handleTelefoneChange}/>
+                    <Form.Control required size="sm" type="tel" placeholder="Digite seu telefone" onChange={this.handleTelefoneChange}/>
                   </Form.Group>
                   <Form.Group controlId="formBasicDescricao" className="mt-3">
                     <Form.Label><b>Descrição</b></Form.Label>
-                    <Form.Control size="sm" as="textarea" rows="5" placeholder="Insira uma descrição sobre você e suas habilidades" onChange={this.handleDescricaoChange} />
+                    <Form.Control required size="sm" as="textarea" type="text" rows="5" placeholder="Insira uma descrição sobre você e suas habilidades" onChange={this.handleDescricaoChange} />
                   </Form.Group>
 
                   <Form.Group controlId="formBasicTaxa">
                     <Form.Label><b>Taxa</b></Form.Label>
-                    <Form.Control size="sm" placeholder="Valor por hora/aula" onChange={this.handleTaxaChange} />
+                    <Form.Control required size="sm" type="value" placeholder="Valor por hora/aula" onChange={this.handleTaxaChange} />
                   </Form.Group >
                   
                 </div>

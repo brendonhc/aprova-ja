@@ -37,13 +37,9 @@ class Entrar extends Component {
     // Cancela o comportamento normal do submit para validarmos e enviarmos os dados
     const { email, password } = await this.state
 
-    if (!email || !password) {
-      return
-    }
-
     // Requisita o login para a api
     const response = await api.post('auth/login', { email, password })
-
+    console.log(response)
     // Salva o token da sessão no cache do navegador
     await setStoragedToken(response.data.token)
     await this.props.history.push("/sala")
