@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 import './styles.css';
-import { Form, Button, FormText, Card } from 'react-bootstrap'
+import { Row, Form, Button, FormText, Card } from 'react-bootstrap'
+
+import Menu from '../../components/Menu'
+import Footer from '../../components/Footer'
 
 import api from '../../services/api';
-import { setStoragedToken } from '../../services/token';
+import { setStoragedToken, storagedTokenIsValid } from '../../services/token';
 
 class Entrar extends Component {
   state = {
     email: '',
     password: '',
+  }
+
+  async componentDidMount() {
+    const isValid = await storagedTokenIsValid()
+    // Se já estiver logado, encaminha para a sala
+    if (isValid) {
+      console.log('Loga aí, né mano!')
+      this.props.history.push("/sala")
+    }
   }
 
   handleEmailChange = event => {
@@ -41,8 +53,12 @@ class Entrar extends Component {
 
   render() {
     return (
-      <div className="container justify-content-center align-items-center mt-5 mb-5">
-        <div className="row justify-content-center align-items-center">
+      <div className="container-fluid">
+        <Row>
+          <Menu />
+        </Row>
+
+        <Row className="justify-content-center align-items-center" style={{ minHeight: (window.innerHeight - 200) }}>
           <Card bg="light" style={{ width: '18rem' }} >
 
             <Form className="col-12" onSubmit={this.handleSubmit}>
@@ -67,7 +83,11 @@ class Entrar extends Component {
             </Form>
 
           </Card>
-        </div>
+        </Row>
+
+        <Row>
+          <Footer />
+        </Row>
       </div>
 
     );
