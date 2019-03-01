@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Form } from 'react-bootstrap';
-// import { Redirect } from 'react-router-dom';
+import { Row, Form } from 'react-bootstrap';
+
+import MenuSala from '../../components/MenuSala'
+import Footer from '../../components/Footer'
 
 import './styles.css';
 
@@ -9,7 +11,7 @@ import { storagedTokenIsValid } from '../../services/token';
 
 class Sala extends Component {
 
-  async componentDidMount () {
+  async componentDidMount() {
     const isValid = await storagedTokenIsValid()
     if (!isValid) {
       console.log('Loga aí, né mano!')
@@ -19,16 +21,24 @@ class Sala extends Component {
 
   render() {
     return (
-      <Container>
-        <Form.Group controlId="exampleForm.ControlSelect1">
-          <Form.Label>Categorias</Form.Label>
-          <Form.Control as="select">
-            <option>Tecnologia</option>
-            <option>Consultoria</option>
-            <option>Engenharia</option>
-          </Form.Control>
-        </Form.Group>
-      </Container>
+      <div className="container-fluid">
+        <Row>
+          <MenuSala />
+        </Row>
+        <Row className="justify-content-center align-items-center" style={{ minHeight: (window.innerHeight - 200) }}>
+          <Form.Group className="container" controlId="exampleForm.ControlSelect1">
+            <Form.Label>Categorias</Form.Label>
+            <Form.Control as="select">
+              <option>Tecnologia</option>
+              <option>Consultoria</option>
+              <option>Engenharia</option>
+            </Form.Control>
+          </Form.Group>
+        </Row>
+        <Row>
+          <Footer />
+        </Row>
+      </div>
     );
   }
 }
