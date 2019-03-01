@@ -3,6 +3,7 @@ import './styles.css';
 import { Form, Button, FormText, Card } from 'react-bootstrap'
 
 import api from '../../services/api';
+import { setStoragedToken } from '../../services/token';
 
 class Entrar extends Component {
   state = {
@@ -19,17 +20,23 @@ class Entrar extends Component {
   }
 
   handleSubmit = async event => {
-    // Cancela o comportamento normal do submit para validarmos e enviarmos os dados
     event.preventDefault()
 
+    // Cancela o comportamento normal do submit para validarmos e enviarmos os dados
     const { email, password } = this.state
+
+    if (!email || !password) {
+      // Implementar validação
+      // Pode ser um force submit do form que aí o html valida
+      return
+    }
 
     // Requisita o login para a api
     const response = await api.post('auth/login', { email, password })
 
     // Salva o token da sessão no cache do navegador
-    await localStorage.setItem('@AprovaJa:token', response.data.token)
-    console.log(response)
+    await setStoragedToken(response.data.token)
+    this.props.history.push("/sala")
   }
 
   render() {
