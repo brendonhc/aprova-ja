@@ -58,7 +58,7 @@ class Sala extends Component {
           <MenuSala />
         </Row>
         <Row className="justify-content-center align-items-center">
-          <Form.Group className="container" controlId="exampleForm.ControlSelect1">
+          <Form.Group controlId="exampleForm.ControlSelect1">
             <Form.Label>Categorias</Form.Label>
             <Form.Control onChange={this.handleChangeCategoria} as="select">
               <option>Tecnologia</option>
