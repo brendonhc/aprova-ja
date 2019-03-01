@@ -35,11 +35,9 @@ class Entrar extends Component {
     event.preventDefault()
 
     // Cancela o comportamento normal do submit para validarmos e enviarmos os dados
-    const { email, password } = this.state
+    const { email, password } = await this.state
 
     if (!email || !password) {
-      // Implementar validação
-      // Pode ser um force submit do form que aí o html valida
       return
     }
 
@@ -48,7 +46,7 @@ class Entrar extends Component {
 
     // Salva o token da sessão no cache do navegador
     await setStoragedToken(response.data.token)
-    this.props.history.push("/sala")
+    await this.props.history.push("/sala")
   }
 
   render() {
@@ -61,15 +59,15 @@ class Entrar extends Component {
         <Row className="justify-content-center align-items-center" style={{ minHeight: (window.innerHeight - 200) }}>
           <Card bg="light" style={{ width: '18rem' }} >
 
-            <Form className="col-12" onSubmit={this.handleSubmit}>
+            <Form id="formulario" className="col-12" onSubmit={this.handleSubmit} method="post">
               <Form.Group controlId="formBasicEmail" className="mt-3">
                 <Form.Label><b>Email</b></Form.Label>
-                <Form.Control type="email" placeholder="Digite seu email" onChange={this.handleEmailChange} />
+                <Form.Control required type="email" placeholder="Digite seu email" onChange={this.handleEmailChange} />
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
                 <Form.Label><b>Senha</b></Form.Label>
-                <Form.Control type="password" placeholder="Digite sua senha" onChange={this.handlePasswordChange} />
+                <Form.Control required type="password" placeholder="Digite sua senha" minLength="6" onChange={this.handlePasswordChange} />
               </Form.Group >
               <Form.Group controlId="LoginButton" className="justify-content-center align-items-center row mx-1" >
                 <Button variant="primary" type="submit" block>
@@ -77,8 +75,12 @@ class Entrar extends Component {
                 </Button>
               </Form.Group>
               <Form.Group controlId="SenhaEsquecida" className="justify-content-center align-items-center row">
+                <FormText>
+                  <a href="/">Ainda não é cadastrado? Junte-se a nós!</a>
+                </FormText>
                 <FormText className="text-muted">
-                  <a href="entrar#BoaSorte">Esqueceu a senha?</a></FormText>
+                  <a href="entrar#BoaSorte">Esqueceu a senha?</a>
+                </FormText>
               </Form.Group>
             </Form>
 
