@@ -27,7 +27,7 @@ class Inicio extends Component {
               <Button href="/cadastro-aluno" size="lg" className="mr-3" variant="success">Seja um aluno</Button>
               <Button href="/cadastro-instrutor" size="lg" variant="secondary">Seja um instrutor</Button>
             </div>
-            <a href="#sobre" style={{ cursor: "pointer" }} className="mt-auto" >
+            <a href="#sobre" style={{ cursor: "pointer"}}  className="mt-auto text-light  " >
               <h6 className="mt-auto">Saiba mais</h6>
               <i class="fas fa-arrow-down fa-2x mb-5"></i>
             </a>
