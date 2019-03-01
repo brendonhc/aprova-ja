@@ -14,8 +14,8 @@ class Menu extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" inline />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto mr-4" >
-            <Nav.Link href="#ajuda" >Ajuda </Nav.Link>
-            <Nav.Link href="#saibamais">Saiba Mais </Nav.Link>
+            <Nav.Link href="#ajuda">Ajuda </Nav.Link>
+            <Nav.Link href="#sobre">Saiba Mais </Nav.Link>
           </Nav>
           <Button variant="outline-light" href="/entrar" >Login</Button>
         </Navbar.Collapse>
