@@ -5,7 +5,7 @@ import { Row, Form, Button, Card } from 'react-bootstrap'
 import Menu from '../../components/Menu'
 import Footer from '../../components/Footer'
 
-import { storagedTokenIsValid } from '../../services/token'
+import { storagedTokenIsValid, setStoragedToken } from '../../services/token'
 
 import api from '../../services/api';
 
@@ -20,8 +20,8 @@ class Cadastro extends Component {
     const isValid = await storagedTokenIsValid()
     // Se já estiver logado, encaminha para a sala
     if (isValid) {
-      console.log('Loga aí, né mano!')
-      this.props.history.push("/sala")
+      await console.log('Boa, ta logado!')
+      await this.props.history.push("/sala")
     }
   }
 
@@ -43,12 +43,16 @@ class Cadastro extends Component {
 
     const { nome, email, password } = this.state
 
+    // if (!nome.isValid || !email.isValid || !password.isValid) {
+    //   return
+    // }
+
     // Requisita o login para a api
     const response = await api.post('alunos', { nome, email, password })
 
     // Salva o token da sessão no cache do navegador
-    await localStorage.setItem('@AprovaJa:token', response.data.data.user.stsTokenManager.accessToken)
-    this.props.history.push('/sala');
+    await setStoragedToken(response.data.data.user.stsTokenManager.accessToken)
+    await this.props.history.push('/sala');
   }
 
   render() {
@@ -63,16 +67,16 @@ class Cadastro extends Component {
             <Form className="col-12" onSubmit={this.handleSubmit}>
               <Form.Group controlId="formBasicName">
                 <Form.Label><b>Nome</b></Form.Label>
-                <Form.Control placeholder="Digite seu nome" onChange={this.handleNameChange} />
+                <Form.Control placeholder="Digite seu nome" onChange={this.handleNameChange} required />
               </Form.Group>
               <Form.Group controlId="formBasicEmail" className="mt-3">
                 <Form.Label><b>Email</b></Form.Label>
-                <Form.Control type="email" placeholder="Digite seu email" onChange={this.handleEmailChange} />
+                <Form.Control type="email" placeholder="Digite seu email" onChange={this.handleEmailChange} required />
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
                 <Form.Label><b>Senha</b></Form.Label>
-                <Form.Control type="password" placeholder="Digite sua senha" onChange={this.handlePasswordChange} />
+                <Form.Control type="password" minLength="6" placeholder="Digite sua senha" onChange={this.handlePasswordChange} required />
               </Form.Group >
               <Form.Group controlId="SignUpButton" className="justify-content-center align-items-center row mx-1" >
                 <Button variant="primary" type="submit" block>

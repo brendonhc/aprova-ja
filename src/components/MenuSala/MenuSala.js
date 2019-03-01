@@ -8,6 +8,7 @@ class MenuSala extends Component {
   
   exitHandler = async() => {
     await cleanStoragedToken()
+    window.location = await "/"
   }
 
   render() {
