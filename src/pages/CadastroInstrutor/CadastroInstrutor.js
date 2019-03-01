@@ -80,7 +80,7 @@ class CadastroInstrutor extends Component {
 
     // Salva o token da sessão no cache do navegador
     await localStorage.setItem('@AprovaJa:token', response.data.data.user.stsTokenManager.accessToken)
-    console.log(response)
+    this.props.history.push('/sala');
   }
 
   render() {
