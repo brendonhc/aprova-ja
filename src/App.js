@@ -8,6 +8,7 @@ import Entrar from './pages/Entrar';
 import Cadastro from './pages/Cadastro';
 import Classe from './pages/Classe';
 import Inicio from './pages/Inicio';
+import CadastroInstrutor from './pages/CadastroInstrutor';
 
 class App extends Component {
   render() {
@@ -21,8 +22,9 @@ class App extends Component {
             <Switch>
               <Route path="/" exact component={Inicio} />
               <Route path="/entrar" component={Entrar} />
-              <Route path="/cadastro" component={Cadastro} />
+              <Route path="/cadastro-aluno" component={Cadastro} />
               <Route path="/classe" component={Classe} />
+              <Route path="/cadastro-instrutor" component={CadastroInstrutor} />
             </Switch>
           </BrowserRouter>
         </main>
