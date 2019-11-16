@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Aprova Já
 
-## Available Scripts
+<h4 align="center">
+  ☕ Aplicativo web completo que visa auxiliar pessoas que buscam um bom desempenho em suas entrevistas de emprego.
+</h4>
 
-In the project directory, you can run:
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/brendonhc/embaralhador.svg">
 
-### `npm start`
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/brendonhc/embaralhador.svg">
+  
+  <a href="https://github.com/brendonhc/embaralhador/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/brendonhc/embaralhador.svg">
+  </a>
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <a href="https://github.com/brendonhc/embaralhador/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/brendonhc/embaralhador.svg">
+  </a>
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+</p>
 
-### `npm test`
+<p align="center">
+  <a href="#motivação">Motivação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#como-usar">Como Usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#implementação">Implementação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rodar-localmente">Implementação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#licença">Licença</a>
+</p>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Motivação
 
-### `npm run build`
+Fruto de um desafio proposto no [Monitora Summer 2019](http://monitorasummer.com.br/), desenvolvemos uma plataforma web completa onde pessoas que buscam se preparar para entrevistas de emprego ou testes de empresas conseguem encontrar pessoas especialistas nesse assunto para lhes auxiliar nessa jornada. É possível então tanto buscar mentoria quanto oferecer mentoria para esse fim na plataforma.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Como Usar
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+É muito simples:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Primeiro, acesse [o aplicativo web](https://aprovaja-monitorasummer.herokuapp.com/) do Aprova Já.
+- Se identifique como *aluno* ou *mentor* fazendo seu cadastro, ou se já possui, login.
+- Então é só usar, solicitando uma nova mentoria ou se oferecendo para mentorar em alguma área específica.
 
-### `npm run eject`
+## Implementação
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+A implementação foi feita as tecnologias mais quentes do mercado baseadas em [*JavaScript*](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript), no frontend utilizamos a biblioteca [*React JS*](https://pt-br.reactjs.org/) estilizado com [*React Bootstrap*](https://react-bootstrap.github.io/) para um app bonito e responsivo, no backend que está versionado em [outro repositório](https://github.com/brendonhc/aprova_ja/) utilizamos a tecnologia [Node JS]() para o servidor e rotas, e para a base de dados, a [Cloud Firestore](https://firebase.google.com/docs/firestore/) base não-relacional do [Firebase](https://firebase.google.com/).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Rodar Localmente
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+É possível rodar localmente fazendo o clone do repositório e executando o simples comando `yarn && yarn start`em um terminal (certifique-se de ter o [node js](https://nodejs.org/) e o [yarn](https://yarnpkg.com/) instalado em sua máquina. Será instalada as dependências necessárias na pasta do projeto e subirá a aplicação em desenvolvimento localmente para uma porta disponível em sua máquina.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Licença
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
