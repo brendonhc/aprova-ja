@@ -46,7 +46,7 @@ A implementação foi feita as tecnologias mais quentes do mercado baseadas em [
 
 ## Rodar Localmente
 
-É possível rodar localmente fazendo o clone do repositório e executando o simples comando `yarn && yarn start`em um terminal (certifique-se de ter o [node js](https://nodejs.org/) e o [yarn](https://yarnpkg.com/) instalado em sua máquina. Será instalada as dependências necessárias na pasta do projeto e subirá a aplicação em desenvolvimento localmente para uma porta disponível em sua máquina.
+É possível rodar localmente fazendo o clone do repositório e executando o simples comando `yarn && yarn start`em um terminal (certifique-se de ter o [node js](https://nodejs.org/) e o [yarn](https://yarnpkg.com/) instalado em sua máquina). Será instalada as dependências necessárias na pasta do projeto e subirá a aplicação em desenvolvimento localmente para uma porta disponível em sua máquina.
 
 ## Licença
 
