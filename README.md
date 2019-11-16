@@ -30,7 +30,7 @@
 
 ## Motivação
 
-Fruto de um desafio proposto no [Monitora Summer 2019](http://monitorasummer.com.br/), desenvolvemos uma plataforma web completa onde pessoas que buscam se preparar para entrevistas de emprego ou testes de empresas conseguem encontrar pessoas especialistas nesse assunto para lhes auxiliar nessa jornada. É possível então tanto buscar mentoria quanto oferecer mentoria para esse fim na plataforma.
+Fruto de um desafio proposto no [Monitora Summer 2019](http://monitorasummer.com.br/), desenvolvemos (eu [Brendon Hudson](https://github.com/brendonhc) e o [Leonardo Daher](https://github.com/leodaher)) uma plataforma web completa onde pessoas que buscam se preparar para entrevistas de emprego ou testes de empresas conseguem encontrar pessoas especialistas nesse assunto para lhes auxiliar nessa jornada. É possível então tanto buscar mentoria quanto oferecer mentoria para esse fim na plataforma.
 
 ## Como Usar
 
